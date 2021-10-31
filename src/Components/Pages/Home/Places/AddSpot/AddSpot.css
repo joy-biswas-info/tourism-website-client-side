@@ -1,10 +1,9 @@
 form input{
     margin: 10px 0;
-    width: 40%;
+    width: 80%;
     border-radius: 10px;
     padding: 5px 10px;
 }
-.services{
-    width: 98%;
-    margin: 0 auto;
+.add-spot-form{
+    width: 90%;
 }

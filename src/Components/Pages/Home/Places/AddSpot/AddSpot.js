@@ -1,23 +1,25 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { Col, Container, Row } from "react-bootstrap";
+import { useForm} from "react-hook-form";
 import "./AddSpot.css";
 import axios from "axios";
 
 const AddSpot = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,reset } = useForm();
   const onSubmit = (data) => {
       axios.post('https://ancient-hollows-54145.herokuapp.com/places', data)
           .then(res => {
-          console.log(res);
+            alert("added sucessfuly")
+            reset()
+            
       })
   };
 
   return (
-    <Container className="services">
-      <h2>Please Add a Service </h2>
-      <Row className="justify-content-center">
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <Container className="services bg-primary varient-light">
+
+      <h2 className="text-center text-white ">Add a Service </h2>
+        <form onSubmit={handleSubmit(onSubmit)} className="add-spot-form mx-auto">
           <input
             {...register("name", { required: true, maxLength: 20 })}
             placeholder="place name"
@@ -33,7 +35,6 @@ const AddSpot = () => {
           <br />
           <input type="submit" />
         </form>
-      </Row>
     </Container>
   );
 };

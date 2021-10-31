@@ -23,16 +23,16 @@ const Navigation = () => {
               Spots
             </Nav.Link>
             <Nav.Link as={Link} to="/addspot">
-              Add Spot
-            </Nav.Link>
-            <Nav.Link as={Link} to="/blog">
-              Blog
+              Add-Spot
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} to={`/myorder/${user.email}`}>My-Order</Nav.Link>
+            <Nav.Link as={Link} to="/manageorder">
+              Manage-Order
+            </Nav.Link>
             <Nav>
+            <Nav.Link as={Link} to={`/myorder/${user.email}`}>My-Order</Nav.Link>
               {user.email ? (
                 <div>
                   <Button variant="danger" onClick={logOut}>

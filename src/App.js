@@ -9,10 +9,10 @@ import PrivetRoute from './Components/Pages/LogIn/PrivetRouter/PrivetRouter';
 import PlaceOrder from './Components/Pages/PlaceOrder/PlaceOrder';
 import Footer from './Components/Footer/Footer';
 import NotFound404 from './Components/Pages/NotFound/NotFound404';
-import Contact from './Components/Pages/Contact/Contact';
 import AddSpot from './Components/Pages/Home/Places/AddSpot/AddSpot';
 import ManageBooking from './Components/Pages/ManageBooking/ManageBooking';
 import MyOrder from './Components/Pages/MyOrder/MyOrder';
+import Contact from './Components/Pages/Home/Home/Contact/Contact';
 
 
 
@@ -28,18 +28,18 @@ function App() {
           <Route exat path="/home">
             <Home></Home>
           </Route>
+          <Route path="/manageorder">
+            <ManageBooking></ManageBooking>
+          </Route>
           <Route path="/addspot">
             <AddSpot></AddSpot>
           </Route>
           <Route path="/login">
             <LogIn></LogIn>
           </Route>
-          {/* <PrivetRoute path="/placeorder/:serviceId">
+          <PrivetRoute path="/placeorder/:placeId">
           <PlaceOrder></PlaceOrder>
-          </PrivetRoute> */}
-          <Route path="/placeorder/:placeId">
-            <PlaceOrder></PlaceOrder>
-          </Route>
+          </PrivetRoute>
           <Route path="/myorder/:email">
             <MyOrder></MyOrder>
           </Route>
