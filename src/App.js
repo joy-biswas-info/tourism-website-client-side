@@ -28,9 +28,9 @@ function App() {
           <Route exat path="/home">
             <Home></Home>
           </Route>
-          <Route path="/manageorder">
+          <PrivetRoute path="/manageorder">
             <ManageBooking></ManageBooking>
-          </Route>
+          </PrivetRoute>
           <Route path="/addspot">
             <AddSpot></AddSpot>
           </Route>
@@ -40,9 +40,9 @@ function App() {
           <PrivetRoute path="/placeorder/:placeId">
           <PlaceOrder></PlaceOrder>
           </PrivetRoute>
-          <Route path="/myorder/:email">
+          <PrivetRoute path="/myorder/:email">
             <MyOrder></MyOrder>
-          </Route>
+          </PrivetRoute>
           <Route path="/contact">
             <Contact></Contact>
           </Route>

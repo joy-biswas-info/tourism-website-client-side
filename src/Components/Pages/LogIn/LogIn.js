@@ -9,9 +9,8 @@ const LogIn = () => {
   const history = useHistory();
   const location = useLocation();
   const url = location.state?.form || "/home";
-  console.log(url.pathname);
   
-    const { signInUsingGoogle, logOut, isLoading, user } = useAuth();
+    const { signInUsingGoogle, isLoading, user } = useAuth();
     if (isLoading) {
       return (
         <Container>
@@ -28,13 +27,6 @@ const LogIn = () => {
         <Container>
           {user.email ? (
             history.push(url.pathname)
-            // <div>
-            //   <Image fluid src={user.photoURL} />
-            //   <h2>Welcome {user.displayName}</h2>
-            //   <Button variant="danger" onClick={logOut}>
-            //     Log Out
-            //   </Button>
-            // </div>
           ) : (
             <div>
               <Button varient="primary" onClick={signInUsingGoogle}>
