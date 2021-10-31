@@ -31,9 +31,9 @@ function App() {
           <PrivetRoute path="/manageorder">
             <ManageBooking></ManageBooking>
           </PrivetRoute>
-          <Route path="/addspot">
+          <PrivetRoute path="/addspot">
             <AddSpot></AddSpot>
-          </Route>
+          </PrivetRoute>
           <Route path="/login">
             <LogIn></LogIn>
           </Route>

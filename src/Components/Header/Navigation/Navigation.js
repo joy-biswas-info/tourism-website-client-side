@@ -22,17 +22,17 @@ const Navigation = () => {
             <Nav.Link as={HashLink} to="/home#spot">
               Spots
             </Nav.Link>
-            <Nav.Link as={Link} to="/addspot">
-              Add-Spot
-            </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} to="/manageorder">
+            {user.email && 
+              <Nav.Link as={Link} to="/addspot">
+                Add-Spot
+              </Nav.Link>}
+            {user.email && <Nav.Link as={Link} to="/manageorder">
               Manage-Order
-            </Nav.Link>
-            <Nav>
-            <Nav.Link as={Link} to={`/myorder/${user.email}`}>My-Order</Nav.Link>
+            </Nav.Link>}
+            {user.email && <Nav.Link as={Link} to={`/myorder/${user.email}`}>My-Order</Nav.Link>}
               {user.email ? (
                 <div>
                   <Button variant="danger" onClick={logOut}>
@@ -45,7 +45,7 @@ const Navigation = () => {
                   LogIn/Register
                 </Nav.Link>
               )}
-            </Nav>
+          
           </Nav>
         </Navbar.Collapse>
       </Container>
