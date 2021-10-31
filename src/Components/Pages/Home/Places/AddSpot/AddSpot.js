@@ -7,7 +7,7 @@ import axios from "axios";
 const AddSpot = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-      axios.post('http://localhost:5000/places', data)
+      axios.post('https://ancient-hollows-54145.herokuapp.com/places', data)
           .then(res => {
           console.log(res);
       })

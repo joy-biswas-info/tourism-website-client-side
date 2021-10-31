@@ -11,14 +11,14 @@ const PlaceOrder = () => {
   const [place, setPlace] = useState({});
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/placeorder/${placeId}`)
+    fetch(`https://ancient-hollows-54145.herokuapp.com/placeorder/${placeId}`)
       .then((res) => res.json())
       .then((data) => setPlace(data));
     //   {alert("pleaase confirm your email")}
   }, []);
   const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        axios.post('http://localhost:5000/order',data)
+        axios.post('https://ancient-hollows-54145.herokuapp.com/order',data)
         .then(res=>console.log(res))
         // console.log(data);
   };

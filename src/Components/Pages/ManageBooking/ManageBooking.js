@@ -3,12 +3,12 @@ import { useParams } from 'react-router';
 import './ManageBooking.css'
 
 const ManageBooking = () => {
-    const [myOrder, setMyOrder] = useState();
+    const [manageOrder, setManageOrder] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/manageorder`)
+        fetch(`https://ancient-hollows-54145.herokuapp.com/manageorder`)
             .then(res => res.json())
-            .then(data => setMyOrder(data));
-        console.log(myOrder);
+            .then(data => setManageOrder(data));
+        console.log(manageOrder);
     }, []);
     return (
         <div>
