@@ -8,7 +8,6 @@ const ManageBooking = () => {
     fetch(`https://ancient-hollows-54145.herokuapp.com/manageorder`)
       .then((res) => res.json())
       .then((data) => setManageOrder(data));
-    console.log(manageOrder);
   }, []);
   const handelCancel = (_id) => {
     const url = `https://ancient-hollows-54145.herokuapp.com/order/${_id}`;

@@ -11,7 +11,7 @@ import initializeFirebase from "../Firebase/InitializeFirebase";
 initializeFirebase();
 const useFireBase = () => {
 
-
+  // const { url, history} = LogIn();
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,7 +23,8 @@ const useFireBase = () => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        setUser(result.user);
+        setUser(result.user)
+          // history.push(url);
         
       })
       .finally(() => setIsLoading(false));
