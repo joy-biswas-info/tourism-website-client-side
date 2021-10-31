@@ -1,0 +1,10 @@
+form input{
+    margin: 10px 0;
+    width: 40%;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.services{
+    width: 98%;
+    margin: 0 auto;
+}

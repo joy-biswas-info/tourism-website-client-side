@@ -1,11 +1,44 @@
-import React from 'react';
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useParams } from "react-router";
+import useAuth from "../../Hooks/UseAuth";
 
 const PlaceOrder = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const { placeId } = useParams();
+  const [place, setPlace] = useState({});
+  const { user } = useAuth();
+  useEffect(() => {
+    fetch(`http://localhost:5000/placeorder/${placeId}`)
+      .then((res) => res.json())
+      .then((data) => setPlace(data));
+    //   {alert("pleaase confirm your email")}
+  }, []);
+  const { register, handleSubmit } = useForm();
+    const onSubmit = (data) => {
+        axios.post('http://localhost:5000/order',data)
+        .then(res=>console.log(res))
+        // console.log(data);
+  };
+  return (
+    <div>
+      <h2>Please Place your order</h2>
+      <h2>{place.name} </h2>
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input {...register("email")} defaultValue={user.email} required /> <br />
+          <input {...register("address")} required />
+          <br />
+          <input {...register("phoneNumber")} required />
+          <br />
+
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default PlaceOrder;

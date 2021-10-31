@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Place from './place/Place';
 import "./Places.css"
 
 const Places = () => {
@@ -9,10 +10,11 @@ const Places = () => {
             .then(res => res.json())
             .then(data=>setPlaces(data))
     },[])
-
     return (
-        <div>
-            {places.length}
+        <div id="spot">
+            {
+                places.map(place=><Place place={place} key={place._id}></Place>)
+            }
         </div>
     );
 };
